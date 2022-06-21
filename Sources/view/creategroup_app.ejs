@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College Community | Create Group</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./creategroup_app.css">
+    <script>
+        $("document").ready(function() {
+            $("#but").click(function(){
+                var group_name = $(".group_name").val();
+                var code = $("#code").val();
+                console.log(group_name.includes(","));
+                if(group_name != "" && group_name.includes(",") == false)
+                {
+                    $.post("/"+"<%= name_account %>"+"create_group", {group_name:group_name, code:code})
+                    window.location.href = "/"+"<%= name_account %>"+"creategroupcheck";
+                }
+                else {
+                    alert("Don't use ',' in group name or it will empty");
+                }
+            })
+        });
+    </script>
+</head>
+<body>
+    <form>
+        <label>Create Group</label>
+        <p>Group name : <input type="text" placeholder="Group name" maxlength="20" class="group_name"></p>
+        <p>Group code : <input type="text" maxlength="6" id="code" disabled></p>  
+        <input type="button" value="Create" id="but">
+    </form>
+</body>
+<script>
+    var code = document.querySelector("#code");
+    var chars = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    var passwordLength = 6;
+    var password = "";
+    for (var i = 0; i < passwordLength; i++) {
+        var randomNumber = Math.floor(Math.random() * chars.length);
+        password += chars.substring(randomNumber, randomNumber + 1);
+    }
+    code.value = password
+</script>
+</html>

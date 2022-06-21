@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community | Success</title>
+    <link rel="stylesheet" href="./gohome_app.css">
+</head>
+<body>
+    <form method="" action="">
+        <h3>Registered</h3>
+        <a id="button">Go</a>
+    </form>
+    <script type="text/javascript">
+        var check_value = "<%= check_value %>";
+        var button = document.querySelector("#button");
+        console.log(check_value);
+        var title = document.querySelector("h3");
+        if(check_value == "mail")
+        {
+            title.innerHTML = "Email Already Exists";
+            button.setAttribute("onclick", "window.location.href='/signinapp' ");
+        }
+        else if(check_value == "register")
+        {
+            title.innerHTML = "Registered Successfull";
+            button.setAttribute("onclick", "window.location.href='/signinapp' ");
+        }
+        else {
+            title.innerHTML = "Something Went Wrong";
+            button.setAttribute("onclick", "window.location.href='/entrance' ");
+        }
+
+    </script>
+</body>
+</html>

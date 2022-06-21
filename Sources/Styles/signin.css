@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300&family=Poppins&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins",sans-serif;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height:100vh;
+    background-color: darkslateblue;
+}
+p {
+    font-size: 15px;
+}
+#f1{
+    border: 2px solid rgb(0,0,0,0.3);
+    /* box-shadow:0px 0px 5px 0px rgb(0, 0, 0, 0.4); */
+    padding:40px 50px;
+    position: relative;
+    background-color: #eee;
+    border-radius: 5px;
+}
+.mail-content input,.pass-content input{
+    padding-left: 5px;
+    width: calc(100% - 28px);
+    height:30px;
+    outline:none;
+    padding-right: 25px;
+    background-color: white;
+    border: none;
+    border-radius: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-color: darkslateblue;
+    color: white;
+}
+.pass-content{
+    margin-top:15px;
+    position: relative;
+}
+#forget{
+    margin-top:25px;
+    margin-bottom:20px;
+}
+#login_button{
+    text-align: center;
+    padding:8px 25px;
+    margin-top:20px;
+    border:none;
+    background-color: darkslateblue;
+    box-shadow: 0 0 10px 0 rgb(72, 61, 139, 0.5);
+    color:white;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.eyeicon {
+    position: absolute;
+    bottom: 10px;
+    right: 3px;
+    color: white;
+}
+@media only screen and (max-width: 750px) {
+    #f1 {
+        padding: 40px 20px;
+    }
+}

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community | Verifying</title>
+    <link rel="stylesheet" href="./accountcreation_app.css">
+</head>
+<body>
+    <form name="f" action="" method="">
+        <p>Enter your 6 digit code.</p><br><br>
+        <input type="text" maxlength="6" class="code_value" name="code_value" placeholder="Enter code..."><br>
+        <input type="button" value="Submit" class="btn1" onclick="check_code()">
+    </form>
+    <script type="text/javascript">
+        var code = "<%= mail_code %>"
+        console.log(code);
+        function check_code()
+        {
+            var code_value = f.code_value.value;
+            if(code == code_value)
+            {
+                window.location.href="/account";
+            }
+            else {
+                alert("You have entered wrong code");
+            }
+        }
+    </script>
+</body>
+</html>

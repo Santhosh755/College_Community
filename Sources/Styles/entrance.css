@@ -1,0 +1,708 @@
+/* @import url("https://fonts.googleapis.com/css?family=Montserrat:400, 600"); */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300&family=Poppins&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+}
+.hero-btn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* width: 200px; */
+  margin: auto;  
+  /* height: 6px; */
+}
+.hero-btn .btn {
+  background-color: black;
+  position: relative;
+  height: 50px;
+  border: none;
+  outline: none;
+  text-decoration: none;
+  /* text-transform: uppercase; */
+  color: #fff;
+  display: inline-block;
+  padding: 1px 10px 10px 10px;
+  line-height: 66px;
+  font-size: 18px;
+  font-weight: 600;
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
+  border-radius: 6px;
+  /* white-space: nowrap; */
+  text-overflow: ellipsis;
+  -moz-user-select: -moz-none;
+  -ms-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+  -moz-appearance: none;
+  cursor: pointer;
+  -webkit-appearance: none;
+  /* -moz-box-shadow: 0 15px 40px rgb(57, 38, 124); */
+  /* -webkit-box-shadow: 0 15px 40px rgb(57, 38, 124); */
+  /* box-shadow: 0 15px 40px rgb(57, 38, 124); */
+  -moz-transform: perspective(600px) rotateX(0deg) scale(1);
+  -ms-transform: perspective(600px) rotateX(0deg) scale(1);
+  -webkit-transform: perspective(600px) rotateX(0deg) scale(1);
+  transform: perspective(600px) rotateX(0deg) scale(1);
+  -moz-transition: all 0.2s linear;
+  -o-transition: all 0.2s linear;
+  -webkit-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+}
+.hero-btn .btn:hover {
+  background-color: darkslateblue;
+  /* -moz-box-shadow: 0 20px 40px rgb(57, 38, 124);
+  -webkit-box-shadow: 0 20px 40px rgb(57, 38, 124);
+  box-shadow: 0 20px 40px rgb(57, 38, 124); */
+}
+.hero-btn .btn:active {
+  -moz-transform: perspective(600px) rotateX(15deg) scale(0.9);
+  -ms-transform: perspective(600px) rotateX(15deg) scale(0.9);
+  -webkit-transform: perspective(600px) rotateX(15deg) scale(0.9);
+  transform: perspective(600px) rotateX(15deg) scale(0.9);
+  font-size: 21px;
+  -moz-box-shadow: 0 20px 40px rgb(57, 38, 124);
+  -webkit-box-shadow: 0 20px 40px rgb(57, 38, 124);
+  box-shadow: 0 20px 40px rgb(57, 38, 124);
+}
+.active .hero-btn .btn:active {
+  -moz-transform: perspective(600px) rotateX(0deg) scale(1);
+  -ms-transform: perspective(600px) rotateX(0deg) scale(1);
+  -webkit-transform: perspective(600px) rotateX(0deg) scale(1);
+  transform: perspective(600px) rotateX(0deg) scale(1);
+  font-size: 22px;
+  -moz-box-shadow: 0 15px 40px rgb(57, 38, 124);
+  -webkit-box-shadow: 0 15px 40px rgb(57, 38, 124);
+  box-shadow: 0 15px 40px rgb(57, 38, 124);
+}
+.hero-btn .particles-circle {
+  position: absolute;
+  background-color: darkslateblue;
+  width: 30px;
+  height: 30px;
+  top: 10px;
+  left: 50%;
+  margin-left: -15px;
+  z-index: -1;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  -moz-transform: scale(0);
+  -ms-transform: scale(0);
+  -webkit-transform: scale(0);
+  transform: scale(0);
+  visibility: hidden;
+}
+.hero-btn .particles-circle:nth-of-type(odd) {
+  border: solid 2px darkslateblue;
+  background-color: transparent;
+}
+@keyframes particles-1 {
+  from {
+    transform: scale(1);
+    visibility: visible;
+  }
+  to {
+    left: -170px;
+    top: -81px;
+    transform: scale(0);
+    visibility: hidden;
+  }
+}
+.active .hero-btn .particles-circle:nth-of-type(1) {
+  animation: particles-1 1.5s 0.025s;
+}
+@keyframes particles-2 {
+  from {
+    transform: scale(1);
+    visibility: visible;
+  }
+  to {
+    left: 88px;
+    top: 126px;
+    transform: scale(0);
+    visibility: hidden;
+  }
+}
+.active .hero-btn .particles-circle:nth-of-type(2) {
+  animation: particles-2 1.5s 0.05s;
+}
+@keyframes particles-3 {
+  from {
+    transform: scale(1);
+    visibility: visible;
+  }
+  to {
+    left: 57px;
+    top: -99px;
+    transform: scale(0);
+    visibility: hidden;
+  }
+}
+.active .hero-btn .particles-circle:nth-of-type(3) {
+  animation: particles-3 1.5s 0.075s;
+}
+@keyframes particles-4 {
+  from {
+    transform: scale(1);
+    visibility: visible;
+  }
+  to {
+    left: -179px;
+    top: -109px;
+    transform: scale(0);
+    visibility: hidden;
+  }
+}
+.active .hero-btn .particles-circle:nth-of-type(4) {
+  animation: particles-4 1.5s 0.1s;
+}
+@keyframes particles-5 {
+  from {
+    transform: scale(1);
+    visibility: visible;
+  }
+  to {
+    left: 180px;
+    top: 123px;
+    transform: scale(0);
+    visibility: hidden;
+  }
+}
+.active .hero-btn .particles-circle:nth-of-type(5) {
+  animation: particles-5 1.5s 0.125s;
+}
+@keyframes particles-6 {
+  from {
+    transform: scale(1);
+    visibility: visible;
+  }
+  to {
+    left: -9px;
+    top: -20px;
+    transform: scale(0);
+    visibility: hidden;
+  }
+}
+.active .hero-btn .particles-circle:nth-of-type(6) {
+  animation: particles-6 1.5s 0.15s;
+}
+@keyframes particles-7 {
+  from {
+    transform: scale(1);
+    visibility: visible;
+  }
+  to {
+    left: 250px;
+    top: 26px;
+    transform: scale(0);
+    visibility: hidden;
+  }
+}
+.active .hero-btn .particles-circle:nth-of-type(7) {
+  animation: particles-7 1.5s 0.175s;
+}
+@keyframes particles-8 {
+  from {
+    transform: scale(1);
+    visibility: visible;
+  }
+  to {
+    left: -218px;
+    top: 183px;
+    transform: scale(0);
+    visibility: hidden;
+  }
+}
+.active .hero-btn .particles-circle:nth-of-type(8) {
+  animation: particles-8 1.5s 0.2s;
+}
+@keyframes particles-9 {
+  from {
+    transform: scale(1);
+    visibility: visible;
+  }
+  to {
+    left: 103px;
+    top: 187px;
+    transform: scale(0);
+    visibility: hidden;
+  }
+}
+.active .hero-btn .particles-circle:nth-of-type(9) {
+  animation: particles-9 1.5s 0.225s;
+}
+@keyframes particles-10 {
+  from {
+    transform: scale(1);
+    visibility: visible;
+  }
+  to {
+    left: 238px;
+    top: -46px;
+    transform: scale(0);
+    visibility: hidden;
+  }
+}
+.active .hero-btn .particles-circle:nth-of-type(10) {
+  animation: particles-10 1.5s 0.25s;
+}
+@keyframes particles-11 {
+  from {
+    transform: scale(1);
+    visibility: visible;
+  }
+  to {
+    left: 231px;
+    top: 24px;
+    transform: scale(0);
+    visibility: hidden;
+  }
+}
+.active .hero-btn .particles-circle:nth-of-type(11) {
+  animation: particles-11 1.5s 0.275s;
+}
+@keyframes particles-12 {
+  from {
+    transform: scale(1);
+    visibility: visible;
+  }
+  to {
+    left: 18px;
+    top: 161px;
+    transform: scale(0);
+    visibility: hidden;
+  }
+}
+.active .hero-btn .particles-circle:nth-of-type(12) {
+  animation: particles-12 1.5s 0.3s;
+}
+@keyframes particles-13 {
+  from {
+    transform: scale(1);
+    visibility: visible;
+  }
+  to {
+    left: 236px;
+    top: 201px;
+    transform: scale(0);
+    visibility: hidden;
+  }
+}
+.active .hero-btn .particles-circle:nth-of-type(13) {
+  animation: particles-13 1.5s 0.325s;
+}
+@keyframes particles-14 {
+  from {
+    transform: scale(1);
+    visibility: visible;
+  }
+  to {
+    left: -44px;
+    top: -138px;
+    transform: scale(0);
+    visibility: hidden;
+  }
+}
+.active .hero-btn .particles-circle:nth-of-type(14) {
+  animation: particles-14 1.5s 0.35s;
+}
+@keyframes particles-15 {
+  from {
+    transform: scale(1);
+    visibility: visible;
+  }
+  to {
+    left: -173px;
+    top: 238px;
+    transform: scale(0);
+    visibility: hidden;
+  }
+}
+.active .hero-btn .particles-circle:nth-of-type(15) {
+  animation: particles-15 1.5s 0.375s;
+}
+@keyframes particles-16 {
+  from {
+    transform: scale(1);
+    visibility: visible;
+  }
+  to {
+    left: -77px;
+    top: -33px;
+    transform: scale(0);
+    visibility: hidden;
+  }
+}
+.active .hero-btn .particles-circle:nth-of-type(16) {
+  animation: particles-16 1.5s 0.4s;
+}
+@keyframes particles-17 {
+  from {
+    transform: scale(1);
+    visibility: visible;
+  }
+  to {
+    left: 81px;
+    top: -57px;
+    transform: scale(0);
+    visibility: hidden;
+  }
+}
+.active .hero-btn .particles-circle:nth-of-type(17) {
+  animation: particles-17 1.5s 0.425s;
+}
+@keyframes particles-18 {
+  from {
+    transform: scale(1);
+    visibility: visible;
+  }
+  to {
+    left: -57px;
+    top: -227px;
+    transform: scale(0);
+    visibility: hidden;
+  }
+}
+.active .hero-btn .particles-circle:nth-of-type(18) {
+  animation: particles-18 1.5s 0.45s;
+}
+@keyframes particles-19 {
+  from {
+    transform: scale(1);
+    visibility: visible;
+  }
+  to {
+    left: 206px;
+    top: 167px;
+    transform: scale(0);
+    visibility: hidden;
+  }
+}
+.active .hero-btn .particles-circle:nth-of-type(19) {
+  animation: particles-19 1.5s 0.475s;
+}
+@keyframes particles-20 {
+  from {
+    transform: scale(1);
+    visibility: visible;
+  }
+  to {
+    left: 94px;
+    top: 98px;
+    transform: scale(0);
+    visibility: hidden;
+  }
+}
+.active .hero-btn .particles-circle:nth-of-type(20) {
+  animation: particles-20 1.5s 0.5s;
+}
+@keyframes particles-21 {
+  from {
+    transform: scale(1);
+    visibility: visible;
+  }
+  to {
+    left: 247px;
+    top: -158px;
+    transform: scale(0);
+    visibility: hidden;
+  }
+}
+.active .hero-btn .particles-circle:nth-of-type(21) {
+  animation: particles-21 1.5s 0.525s;
+}
+@keyframes particles-22 {
+  from {
+    transform: scale(1);
+    visibility: visible;
+  }
+  to {
+    left: 15px;
+    top: 221px;
+    transform: scale(0);
+    visibility: hidden;
+  }
+}
+.active .hero-btn .particles-circle:nth-of-type(22) {
+  animation: particles-22 1.5s 0.55s;
+}
+@keyframes particles-23 {
+  from {
+    transform: scale(1);
+    visibility: visible;
+  }
+  to {
+    left: -20px;
+    top: -172px;
+    transform: scale(0);
+    visibility: hidden;
+  }
+}
+.active .hero-btn .particles-circle:nth-of-type(23) {
+  animation: particles-23 1.5s 0.575s;
+}
+@keyframes particles-24 {
+  from {
+    transform: scale(1);
+    visibility: visible;
+  }
+  to {
+    left: -204px;
+    top: 10px;
+    transform: scale(0);
+    visibility: hidden;
+  }
+}
+.active .hero-btn .particles-circle:nth-of-type(24) {
+  animation: particles-24 1.5s 0.6s;
+}
+@keyframes particles-25 {
+  from {
+    transform: scale(1);
+    visibility: visible;
+  }
+  to {
+    left: 71px;
+    top: 59px;
+    transform: scale(0);
+    visibility: hidden;
+  }
+}
+.active .hero-btn .particles-circle:nth-of-type(25) {
+  animation: particles-25 1.5s 0.625s;
+}
+@keyframes particles-26 {
+  from {
+    transform: scale(1);
+    visibility: visible;
+  }
+  to {
+    left: -217px;
+    top: -168px;
+    transform: scale(0);
+    visibility: hidden;
+  }
+}
+.active .hero-btn .particles-circle:nth-of-type(26) {
+  animation: particles-26 1.5s 0.65s;
+}
+@keyframes particles-27 {
+  from {
+    transform: scale(1);
+    visibility: visible;
+  }
+  to {
+    left: 131px;
+    top: -222px;
+    transform: scale(0);
+    visibility: hidden;
+  }
+}
+.active .hero-btn .particles-circle:nth-of-type(27) {
+  animation: particles-27 1.5s 0.675s;
+}
+@keyframes particles-28 {
+  from {
+    transform: scale(1);
+    visibility: visible;
+  }
+  to {
+    left: 164px;
+    top: -48px;
+    transform: scale(0);
+    visibility: hidden;
+  }
+}
+.active .hero-btn .particles-circle:nth-of-type(28) {
+  animation: particles-28 1.5s 0.7s;
+}
+@keyframes particles-29 {
+  from {
+    transform: scale(1);
+    visibility: visible;
+  }
+  to {
+    left: -109px;
+    top: -194px;
+    transform: scale(0);
+    visibility: hidden;
+  }
+}
+.active .hero-btn .particles-circle:nth-of-type(29) {
+  animation: particles-29 1.5s 0.725s;
+}
+@keyframes particles-30 {
+  from {
+    transform: scale(1);
+    visibility: visible;
+  }
+  to {
+    left: -18px;
+    top: -169px;
+    transform: scale(0);
+    visibility: hidden;
+  }
+}
+.active .hero-btn .particles-circle:nth-of-type(30) {
+  animation: particles-30 1.5s 0.75s;
+}
+@keyframes particles-31 {
+  from {
+    transform: scale(1);
+    visibility: visible;
+  }
+  to {
+    left: -182px;
+    top: -4px;
+    transform: scale(0);
+    visibility: hidden;
+  }
+}
+.active .hero-btn .particles-circle:nth-of-type(31) {
+  animation: particles-31 1.5s 0.775s;
+}
+@keyframes particles-32 {
+  from {
+    transform: scale(1);
+    visibility: visible;
+  }
+  to {
+    left: 134px;
+    top: -173px;
+    transform: scale(0);
+    visibility: hidden;
+  }
+}
+.active .hero-btn .particles-circle:nth-of-type(32) {
+  animation: particles-32 1.5s 0.8s;
+}
+@keyframes particles-33 {
+  from {
+    transform: scale(1);
+    visibility: visible;
+  }
+  to {
+    left: -196px;
+    top: -230px;
+    transform: scale(0);
+    visibility: hidden;
+  }
+}
+.active .hero-btn .particles-circle:nth-of-type(33) {
+  animation: particles-33 1.5s 0.825s;
+}
+@keyframes particles-34 {
+  from {
+    transform: scale(1);
+    visibility: visible;
+  }
+  to {
+    left: -25px;
+    top: -183px;
+    transform: scale(0);
+    visibility: hidden;
+  }
+}
+.active .hero-btn .particles-circle:nth-of-type(34) {
+  animation: particles-34 1.5s 0.85s;
+}
+@keyframes particles-35 {
+  from {
+    transform: scale(1);
+    visibility: visible;
+  }
+  to {
+    left: -210px;
+    top: 17px;
+    transform: scale(0);
+    visibility: hidden;
+  }
+}
+.active .hero-btn .particles-circle:nth-of-type(35) {
+  animation: particles-35 1.5s 0.875s;
+}
+
+/* .v-align {
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+} */
+
+.wrap__sparks {
+  transform: translateZ(-100px);
+}
+
+* {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.text {
+  transform: translateY(60px);
+  font-size: 24px;
+}
+.container {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  width: 100%;
+  background-color: darkslateblue;
+}
+.v-align{
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: whitesmoke;
+  width: 450px;
+  height: 350px;
+  outline: none;
+  /* box-shadow: 4px 4px 1px 2px rgb(48, 45, 45); */
+  border-radius: 10px;
+  -moz-transform: translateY(-0%);
+  -ms-transform: translateY(-0%);
+  -webkit-transform: translateY(-0%);
+  transform: translateY(-0%);
+}
+
+#delaymsg {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 400px;
+  margin-top: 200px;
+}
+
+.planelogo {
+  color: darkslateblue;
+}
+#countdown {
+  color: red;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+@media only screen and (max-width: 750px) {
+  .v-align {
+    width: 300px;
+  }
+  .text {
+    font-size: 18px;
+  }
+  .hero-btn .btn {
+    font-size: 16px;
+  }
+  #delaymsg {
+    font-size: 12px;
+  }
+}

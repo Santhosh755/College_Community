@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>College Community</title>
+    <script src="https://kit.fontawesome.com/3cf97c9a8f.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="./style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+        <script>
+            $("document").ready(function() {
+                var login_name = "<%= name_account %>"
+                var role_account = "<%= role_account %>"
+                var account_id = $("#account_id");
+                var creategroup = "/"+"<%= name_account %>"+"creategroup";
+                var creategroup_help = creategroup;
+                var groups_list = "<%= groups_list %>";
+                var text = "";
+                link_join = "/"+login_name+"joingroup";
+                if(login_name != "")
+                {
+                    account_id.text(login_name);
+                    $("#account_id").attr("href","#")
+                    $(".showpop").attr("href",link_join)
+                    $("#chat_details").attr("href","/"+login_name+"chatroom")
+                    if(role_account == "Staffs" || role_account == "Principal")
+                    {
+                        console.log(login_name)
+                        $(".group").append("<a href='' id='creategroupbutton'>Create Group</a>")
+                        $("#creategroupbutton").attr("href", creategroup);
+                    }
+                    $("#account_id").click(function() {
+                        $(".profile_help").addClass("profile_open");
+                    })
+                    $(".account_id_close").click(function() {
+                        $(".profile_help").removeClass("profile_open");
+                    })
+                    if(groups_list.length == 0)
+                    {
+                        $(".list_group").append("<span>" + "No Active Groups" +"</span>");
+                    }
+                    for(i=0;i<groups_list.length;i++)
+                    {
+                        if(groups_list[i]==",")
+                        {
+                            if(text != "undefined")
+                            {
+                                $(".list_group").append("<span>" + text +"</span>");
+                            }
+                            text = ""
+                        }
+                        else {
+                            text += groups_list[i]
+                        }
+                        if(i==groups_list.length-1)
+                        {
+                            $(".list_group").append("<span>" + text +"</span>");
+                        }
+                    }
+                    // $(".list_group").append("<span>" + "<%= groups_list %>" +"</span>");
+                }
+                else {
+                    account_id.text("Join");
+                    $("#account_id").attr("href","/select")
+                    $("#chat_details").attr("href","#")
+                    $(".showpop").attr("href","#")
+                    $(".showpop").click(function() {
+                        $(".popup_help").addClass("popup_open")
+                    })
+                    $(".but1").click(function() {
+                        $(".popup_help").removeClass("popup_open")
+                    })
+                    $(".list_group").append("<span>Login to View Active Groups.</span>");
+                }
+            })
+        </script>
+    <script>
+    </script>
+</head>
+<body>
+    <div class="header_app" id="header_app">
+        <p class="app_name" id="app_name">College Community</p>
+        <p class="join_us" id="join_us">
+            <a href="/select" id="account_id">Join</a>
+        </p>
+    </div>
+    <div class="group">
+        <a href="#" id="chat_details" class="showpop">Join Public</a>
+        <a href='#' class='showpop'>Join Group</a>
+    </div>
+    <!-- <a href="" id="chat_details">Join Chat</a> -->
+
+    <div class="popup_help">
+        <div class="popup">
+            <p>Login to Continue</p>
+            <button class="but1">Ok</button>
+        </div>
+    </div>
+
+    <div class="profile_help">
+        <div class="profile">
+            <p>Account<span><i class="fa-solid fa-xmark account_id_close" style="cursor: pointer;"></i></span></p><br>
+            <img src="https://media.istockphoto.com/vectors/vector-businessman-black-silhouette-isolated-vector-id610003972?k=20&m=610003972&s=612x612&w=0&h=-Nftbu4sDVavoJTq5REPpPpV-kXH9hXXE3xg_D3ViKE="><br>
+            <h3><%= name_account %></h3><br>
+            <a href="/"><i class="fa-solid fa-arrow-right-from-bracket"></i>&nbsp;&nbsp;Log Out</a>
+        </div>
+    </div>
+
+    <div class="list_group">
+        <label>ACTIVE GROUPS</label>
+    </div>
+
+
+</body>
+</html>

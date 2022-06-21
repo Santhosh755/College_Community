@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Community | Sign Up</title>
+    <link rel="stylesheet" type="text/css" href="./signup.css">
+    <script src="https://kit.fontawesome.com/3cf97c9a8f.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function () {
+            $("#signup_send_data").click(function () {
+                popup = $(".popup");
+                error_message = $("#message");
+
+                // Password
+                createpass = $(".createpass_signup").val();
+                confirmpass = $(".confirmpass_signup").val();
+
+                if ((createpass == confirmpass)) {
+                    user = $(".name_signup").val().replaceAll(" ","");
+                    mail = $(".mail_signup").val();
+                    role = $("#role").val();
+                    college_name = $("#select_college").val();
+
+                    phone = $(".phone_signup").val();
+                    if ((user != "") && (mail != "") && (phone != "") && (createpass != "") && (confirmpass != "") && (role != "") && (college_name != "")) {
+                        $.post("/signup", { user: user, mail: mail, phone: phone, createpass: createpass, role:role, college_name:college_name });
+                        window.location.href="/verifying";
+                    }
+                    else {
+                            var inp= $(".input");
+                            var element=$(".req")
+                            for(i=0;i<7;i++) {
+                                if($(inp[i]).val()=="")
+                                {
+                                    $(element[i]).text("Required !");
+                                    $(element[i]).css({
+                                        "visibility" : "visible",
+                                    });
+                                }
+                                else {
+                                    $(element[i]).css({
+                                        "visibility" : "hidden",
+                                    });
+                                }
+                            }
+                        }
+                }
+                else {
+                    alert("Password is not matched")
+                }
+            })
+        })
+    </script>
+</head>
+<body id="main">
+    <form action="" method="">
+        <h2>SIGN UP</h2>
+        <p>Username<br><input type="text" class="name_signup input" name="name_signup" placeholder="Your name"><span id="t1" class="req">text</span></p>
+        <p>E-mail<br><input type="email" class="mail_signup input" name="mail_signup" placeholder="example@gmail.com"><span id="e1" class="req">text</span>
+        </p>
+        <p>Phone Number<br><input type="tel" class="phone_signup input" name="phone_signup" placeholder="+91 95428*****"><span id="1p" class="req">text</span>
+        </p>
+        <p>Select your Role
+            <select id="role" class="input">
+                <option selected></option>
+                <option>Principal</option>
+                <option>Staffs</option>
+                <option>Students</option>
+            </select>
+            <span class="req">text</span>
+        </p>
+        <p>Select your College
+            <select id="select_college" class="input">
+                <option selected></option>
+            </select>
+            <span class="req">text</span>
+        </p>
+        <p>Password<br><input type="password" class="createpass_signup input" name="createpass_signup" placeholder="Enter Password"><i class="fa-solid fa-eye eyeicon"></i><span id="p1" class="req">text</span></p>
+        <p>Confirm Password<br><input type="password" class="confirmpass_signup input" name="confirmpass_signup" placeholder="Re-Enter Password"><i class="fa-solid fa-eye eyeicon1"></i><span id="p2" class="req">text</span></p>
+        <center><input type="button" id="signup_send_data" value="Register"></center>
+    
+        <p id="already">
+            I am already User with Community?
+            <a href="/signinapp">Sign In</a>
+        </p>
+        <p id="college_register">
+            I am Principle want to want to Register.
+            <a href="/registercollege">Register College Now</a>
+        </p>
+    </form>
+    <script>
+        var select_college = document.querySelector("#select_college");
+        var list_college = "<%= list_college %>";
+        console.log(list_college);
+        '<% for(i=0;i<list_college.length;i++) { %>'
+            select_college.innerHTML += "<option><%= list_college[i] %></option>";
+        '<% } %>'
+
+        var eyeicon = document.querySelector(".eyeicon");
+        var eyeicon1 = document.querySelector(".eyeicon1");
+        var pass = document.querySelector(".createpass_signup");
+        var pass1 = document.querySelector(".confirmpass_signup");
+        eyeicon.addEventListener("click", () => {
+            if(eyeicon.className == "fa-solid fa-eye eyeicon") {
+                eyeicon.classList = "fa-solid fa-eye-slash eyeicon";
+                pass.setAttribute("type", "text");
+            }
+            else {
+                eyeicon.classList = "fa-solid fa-eye eyeicon";
+                pass.setAttribute("type", "password");
+            }
+        });
+        eyeicon1.addEventListener("click", () => {
+            if(eyeicon1.className == "fa-solid fa-eye eyeicon") {
+                eyeicon1.classList = "fa-solid fa-eye-slash eyeicon";
+                pass1.setAttribute("type", "text");
+            }
+            else {
+                eyeicon1.classList = "fa-solid fa-eye eyeicon";
+                pass1.setAttribute("type", "password");
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300&family=Poppins&display=swap');
+* {
+	margin: 0;
+	padding: 0;
+	font-family: 'Poppins',sans-serif;
+}
+body {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	background-color: darkslateblue;
+}
+header {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	color: white;
+	font-weight: 600;
+	font-size: 14px;
+	justify-content: center;
+}
+.container {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	background-color: rgb(57, 56, 61);
+	color: white;
+	height: 60vh;
+	width: 500px;
+	padding: 10px 10px;
+	border-radius: 5px;
+}
+.messages {
+	position: relative;
+	background-color: white;
+	width: calc(100%) - 20px;
+	height: 100%;
+	overflow-y: scroll;
+	padding: 20px 20px;
+}
+.messages span {
+	position: relative;
+	display: flex;
+	background-color: rgb(57, 56, 61);
+	color: white;
+	width: 90%;
+	font-size: 14px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	border-top-right-radius: 10px;
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+	align-items: flex-end;
+	padding-top: 30px;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-bottom: 10px;
+}
+span small {
+	position: absolute;
+	top: 10px;
+	color: orange;
+}
+.messages p {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	/* font-weight: 600; */
+	background-color: rgb(57, 56, 61);
+	padding: 10px 10px;
+	font-size: 15px;
+}
+.messages p small {
+	background-color: transparent;
+	padding: 0 0;
+	/* font-weight: 0; */
+	font-size: 12px;
+	color: yellow;
+}
+.footer {
+	position: relative;
+	background-color: white;
+	border-top: 1px solid rgb(0, 0, 0, 0.5);
+	padding: 5px 5px;
+}
+#sent_button {
+	width: calc(10% - 1px);
+	height: 100%;
+	background-color:darkslateblue;
+	border: none;
+	color: white;
+	border-radius: 5px;
+	box-shadow: 0 0 10px 0 rgb(72, 61, 139, 0.6);
+}
+.close_but {
+	position: absolute;
+	color: white;
+	right: 10px;
+	cursor: pointer;
+}
+.footer #text_value {
+	width: calc((100% - 15px) - 12%);
+	padding: 5px 5px;
+	outline: 1px solid rgb(72, 61, 139, 0.8);
+	box-shadow: 0 0 10px 0 rgb(72, 61, 139, 0.6);
+	border-radius: 5px;
+	border: none;
+}
+@media only screen and (max-width: 750px) {
+    .container {
+		width: 90%;
+	}
+}

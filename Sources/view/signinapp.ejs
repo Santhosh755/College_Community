@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community | Sign In</title>
+    <link rel="stylesheet" href="./signin.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/3cf97c9a8f.js" crossorigin="anonymous"></script>
+
+    
+        <script>
+            $(document).ready(function () {
+                $("#login_button").click(function() {
+                    email_id_signin = $(".mail_signin").val();
+                    pass_signin = $(".pass_signin").val();
+                    $.post("/signinapp", {email_id_signin:email_id_signin, pass_signin:pass_signin})
+                    window.location.href="/check_for_signin"
+                })
+            });
+        </script>
+</head>
+<body>
+    <form action="" method="" id="f1">
+        <center><h3>Sign In</h3></center><br>
+        <p class="mail-content">E-mail ID : <br><input type="email" class="mail_signin" name="mail_signin" placeholder="example@gmail.com"></p>
+        <p class="pass-content">Password : <br><input type="password" class="pass_signin" name="pass_signin" placeholder="Password"><i class="fa-solid fa-eye eyeicon"></i></p>
+        <center><input type="button" id="login_button" value="Login"></center>
+        <p id="forget">
+            <a href="/forgetpass">forget password?</a>
+        </p>
+        <p>
+            I am new to Community?
+            <a href="/signup">Sign Up</a>
+        </p>
+    </form>
+    <script>
+        var eyeicon = document.querySelector(".eyeicon");
+        var pass = document.querySelector(".pass_signin");
+        eyeicon.addEventListener("click", () => {
+            if(eyeicon.className == "fa-solid fa-eye eyeicon") {
+                eyeicon.classList = "fa-solid fa-eye-slash eyeicon";
+                pass.setAttribute("type", "text");
+            }
+            else {
+                eyeicon.classList = "fa-solid fa-eye eyeicon";
+                pass.setAttribute("type", "password");
+            }
+        });
+        
+    </script>
+</body>
+</html>

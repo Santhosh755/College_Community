@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./chat.css">
+  <script src="https://kit.fontawesome.com/3cf97c9a8f.js" crossorigin="anonymous"></script>
+  <script src="/socket.io/socket.io.js"></script>
+  <title>Community</title>
+</head>
+<body>
+  <div class="container">
+    <header>
+        <%= college_name_account %>
+        <i class="fa-solid fa-xmark close_but"></i>
+    </header><br>
+    <div class="messages">
+        <p><%= name_account %></p>
+        <span>Welcome to Community Chat<small style="color: hotpink;">College Community</small></span>
+    </div>
+    <form class="footer">
+        <input type="text" id="text_value">
+        <button id="sent_button"><i class="fa-solid fa-paper-plane"></i></button>
+    </form>
+  </div>
+  <script>
+    var socket = io();
+    var sent_button = document.querySelector("#sent_button");
+    var get_text = document.querySelector("#text_value");
+    var messages = document.querySelector(".messages");
+    var count_text = document.querySelector(".messages p");
+    var close_but = document.querySelector(".close_but");
+    var my_name = count_text.innerHTML;
+    var role_account = '<%= role_account %>';
+
+    if(role_account == "Students")
+    {
+      get_text.setAttribute("disabled", true)
+      sent_button.setAttribute("disabled", true)
+    }
+    else {
+      get_text.setAttribute("editable", true)
+      sent_button.setAttribute("editable", true)
+    }
+
+    socket.on("count_value", function(data) {
+      count_text.innerHTML = my_name + " <small>Online : " + data + " </small>"
+    })
+
+    sent_button.addEventListener('click', function (e) {
+        e.preventDefault();
+        socket.emit('chat',get_text.value, my_name);
+        messages.innerHTML += "<span>" + get_text.value + "<small>" +  my_name + "</small>" + "</span>";
+        get_text.value = "";
+    })
+
+    socket.on('chat', (data, name_current) => {
+        messages.innerHTML += "<span>" + data + "<small>" + name_current + "</small>" + "</span>";
+    })
+
+    close_but.addEventListener("click", () => {
+      window.location.href = "/" + "<%= name_account %>";
+    })
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community | Verify code</title>
+    <link rel="stylesheet" href="./mail_verify_app.css">
+</head>
+<body>
+    <form method="" action="" class="container">
+        <center>
+        <p>We will send Mail to <span style="color: yellow;"><%= mailcode %></span>.<p><center><br><br>
+        <input type="text" class="code_value" placeholder="Enter Code"><br><br>
+        <center>
+        <input type="button" value="Check" class="but"></center>
+    </form>
+    <script>
+        var password = "<%= password %>";
+        var but = document.querySelector(".but");
+        but.addEventListener('click', () => {
+            var code_value = document.querySelector(".code_value").value;
+            if(code_value == password)
+            {
+                window.location.href="/update_password"
+            }
+            else {
+                document.write("<b style='font-size:50px; font-family:sans-serif;'>Invalid Code<b>");
+            }
+        })
+    </script>
+</body>
+</html>

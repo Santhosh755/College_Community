@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community | Process</title>
+    <link rel="stylesheet" href="./details1.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+
+    <script>
+        $(document).ready(function() {
+            $("#next_button").click(function(){
+                var text_val = $("select").val();
+                if(text_val == "Principle")
+                {
+                    window.location.href="/registercollege"
+                }
+                else if(text_val == "Staffs")
+                {
+
+                }
+                else if(text == "Students")
+                {
+
+                }
+                else {
+
+                }
+            })
+        })
+    </script>
+</head>
+<body>
+    <label>Select your Role</label>
+    <select>
+        <option selected>Select College</option>
+        <option>Principle</option>
+        <option>Staffs</option>
+        <option>Students</option>
+    </select>
+
+    <button id="next_button">Next</button>
+</body>
+</html>

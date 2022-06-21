@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register College</title>
+    <link rel="stylesheet" href="./registercollege.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function () {
+            $("#reg_but").click(function () {
+                college_name = $("#college_name").val();
+                location_name = $("#location_name").val();
+                pincode = $("#pincode").val();
+                principle_name = $("#principle_name").val();
+
+                if((college_name != "") && (location_name != "") && (pincode != "") && (principle_name != ""))
+                {
+                    $.post("/registercollege_details", {
+                        college_name: college_name,
+                        location_name: location_name,
+                        pincode: pincode,
+                        principle_name:principle_name,
+                    })
+                    alert("Registered");
+                    window.location.href="/signup";
+                }
+                else {
+                    alert("All Fields are Required");
+                }
+            })
+        });
+    </script>
+</head>
+
+<body>
+    <form action="" method="">
+        <label>REGISTER YOUR COLLEGE</label>
+        <input type="text" id="college_name" placeholder="College name" maxlength="50">
+        <input type="text" id="principle_name" placeholder="Principle name" maxlength="50">
+        <input type="text" id="location_name" placeholder="Location (ex : Chennai)" maxlength="20">
+        <input type="tel" id="pincode" placeholder="Pincode" maxlength="6">
+        <input type="button" id="reg_but" value="Register Now">
+    </form>
+
+</body>
+
+</html>
